@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Total extends Component {
-    render() {
+function Total () {
+ 
         return (
             <div>
-                Your total balence is:
+                Your total expense is:
                 
             </div>
         )
-    }
 }
+export default Total
