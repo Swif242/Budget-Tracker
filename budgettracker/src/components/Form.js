@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 // import BudgetContext from '../utils/BudgetContext'
 import TableData from "./Table"
 import Total from './Total'
-// import Table from 'react-bootstrap/Table';
+
 
 
 function Form() {
@@ -15,6 +15,7 @@ function Form() {
     const [expenses, setExpenses] = useState([])
     const [total, setTotal] = useState(0)
 
+    // function to handle when the submit button is clicked
     const handleSubmit = event => {
         event.preventDefault();
         console.log("You added an expense of: " + amount + " "
@@ -33,6 +34,7 @@ function Form() {
         handleTotal()
     }
 
+    // working on getting the total from each exspense amount,  getting an error
     const handleTotal = () => {
         let total = parseInt(expenses.amount).reduce(function (a, b) {
             return a + b;

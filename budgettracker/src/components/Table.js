@@ -11,7 +11,7 @@ function TableData(props) {
                     <tr>
                         <th>Amount</th>
                         <th>Company</th>
-                        <th>Note</th>
+                        <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
