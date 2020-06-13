@@ -1,12 +1,12 @@
 import React from 'react'
 
-function Total () {
+function Total (props) {
  
         return (
             <div>
-                Your total expense is:
+                Your total expense is: {props.total}
                 
             </div>
         )
 }
-export default Total
+export default Total;

@@ -1,19 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
+// import BudgetContext from '../utils/BudgetContext'
 import Form from "./Form"
 // import TableData from "./Table"
-import Total from "./Total"
+// import Total from "./Total"
 
 
-export default class BudgetContainer extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Budget Tracker</h1>
+
+function BudgetContainer() {
+
+    // const [budgetState, setBudgetState] = useState({
+    //     amount: "",
+    //     company: "",
+    //     note: "",
+    //     total: 0
+    // });
+   
+    return (
+        <div>
+            <h1>Budget Tracker</h1>
+            {/* <BudgetContext.Provider value={budgetState}> */}
                 <Form />
-                <Total />
-            </div>
-                
-        
-        )
-    }
+                {/* <TableData /> */}
+                {/* <Total /> */}
+            {/* </BudgetContext.Provider> */}
+        </div>
+    )
 }
+export default BudgetContainer;

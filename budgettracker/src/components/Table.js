@@ -1,31 +1,29 @@
-// import React from 'react'
-// import Table from 'react-bootstrap/Table';
+import React from 'react'
+import Table from 'react-bootstrap/Table';
+// import BudgetContext from '../utils/BudgetContext'
 
-//  function TableData (props) {
-//         return (
-//             <div>
-//                 <Table striped bordered hover>
-//                     <thead>
-//                         <tr>
-//                             <th>Amount</th>
-//                             <th>Company</th>
-//                             <th>Note</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         <tr>
-//                             <td>$20</td>
-//                             <td>Papa Johns</td>
-//                             <td>Pizza</td>
-//                         </tr>
-//                         <tr>
-//                             <td>${props.amount}</td>
-//                             <td></td>
-//                             <td></td>
-//                         </tr>
-//                     </tbody>
-//                 </Table>
-//             </div>
-//         )
-// }
-// export default TableData
+function TableData(props) {
+    // const { expenses } = useContext(BudgetContext)
+    return (
+        <div>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Amount</th>
+                        <th>Company</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.expenses.map(add => (<tr>
+                        <td>${add.amount}</td>
+                        <td>{add.company}</td>
+                        <td>{add.note}</td>
+                    </tr>
+                    ))}
+                </tbody>
+            </Table>
+        </div>
+    )
+}
+export default TableData;
