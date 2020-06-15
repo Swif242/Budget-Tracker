@@ -4,6 +4,7 @@ const BudgetContext = React.createContext({
   amount: "",
   company: "",
   note: "",
+  expenses: [],
   total: 0
 });
 

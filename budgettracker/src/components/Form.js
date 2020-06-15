@@ -1,75 +1,41 @@
-import React, { useState } from 'react'
-// import BudgetContext from '../utils/BudgetContext'
-import TableData from "./Table"
-import Total from './Total'
+import React, { useContext } from 'react'
+import BudgetContext from '../utils/BudgetContext'
+// import TableData from "./Table"
+// import Total from './Total'
 
 
 
 function Form() {
 
-    // setting up useState
-    // const {amount, company, note, expenses, total} = useContext(BudgetContext);
-    const [amount, setAmount] = useState("")
-    const [company, setCompany] = useState("")
-    const [note, setNote] = useState("")
-    const [expenses, setExpenses] = useState([])
-    const [total, setTotal] = useState(0)
-
-    // function to handle when the submit button is clicked
-    const handleSubmit = event => {
-        event.preventDefault();
-        console.log("You added an expense of: " + amount + " "
-            + company + " " + note);
-        
-        setExpenses([
-            // keep the older data
-            ...expenses,
-            //use for the new data to create a new table row
-            {
-                amount: amount,
-                company: company,
-                note: note
-            }]
-        )
-        handleTotal()
-    }
-
-    // working on getting the total from each exspense amount,  getting an error
-    const handleTotal = () => {
-        let total = parseInt(expenses.amount).reduce(function (a, b) {
-            return a + b;
-            
-        });
-        setTotal(total)
-    }
-
+    // setting up useContext
+    const {handleInput, handleSubmit} = useContext(BudgetContext);
+   
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}> 
                 <label> Add Expense: </label>
                 <input
                     type="integer"
                     name="amount"
                     placeholder="Enter Amount"
-                    onChange={event => setAmount(event.target.value)}
+                    onChange={event => handleInput(event)}
                 />
                 <input
                     type="text"
                     name="company"
                     placeholder="Enter Company"
-                    onChange={event => setCompany(event.target.value)}
+                    onChange={event => handleInput(event)}
+                    // onChange={event => setCompany(event.target.value)}
                 />
                 <input
                     type="text"
                     name="note"
                     placeholder="Enter Description"
-                    onChange={event => setNote(event.target.value)}
+                    onChange={event => handleInput(event)}
                 />
                 <button className="btn btn-success" type="submit">Submit</button>
             </form>
-            <TableData expenses={expenses} />
-            <Total total={total} />
         </div>
     )
 }
