@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Table from 'react-bootstrap/Table';
-import BudgetContext from '../utils/BudgetContext'
 
-function TableData() {
-    const { expenses } = useContext(BudgetContext)
+
+function TableData(props) {
+    
     return (
         <div>
             <Table striped bordered hover>
@@ -15,17 +15,12 @@ function TableData() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* <tr>
-                        <td>{amount}</td>
-                        <td>{company}</td>
-                        <td>{note}</td>
-                    </tr> */}
-                    {/* {expenses.map(add => (<tr>
+                    {props.expenses.map(add => (<tr>
                         <td>${add.amount}</td>
                         <td>{add.company}</td>
                         <td>{add.note}</td>
                     </tr>
-                    ))} */}
+                    ))}
                 </tbody>
             </Table>
         </div>
