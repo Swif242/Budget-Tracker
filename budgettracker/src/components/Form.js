@@ -14,7 +14,7 @@ function Form() {
             <form onSubmit={handleSubmit}>
                 <div className="card-group">
                     <div className="card">
-                        <img src="./images/adding-money-clipart-18.png" className="card-img-top" alt="adding money image" />
+                        <img src="./images/adding-money-clipart-18.png" className="card-img-top" alt="adding money " />
                         <div className="card-body">
                             <h5 className="card-title">How much was it?? </h5>
                             <input
@@ -26,7 +26,7 @@ function Form() {
                         </div>
                     </div>
                     <div className="card">
-                        <img src="./images/adding-money-place.png" className="card-img-top" alt="company image" />
+                        <img src="./images/adding-money-place.png" className="card-img-top" alt="company " />
                         <div className="card-body">
                             <h5 className="card-title">Where'd you get it?? </h5>
                             <input
@@ -38,7 +38,7 @@ function Form() {
                         </div>
                     </div>
                     <div className="card">
-                        <img src="./images/notes-clipart.jpg" className="card-img-top" alt="note image" />
+                        <img src="./images/notes-clipart.jpg" className="card-img-top" alt="note " />
                         <div className="card-body">
                             <h5 className="card-title">What is it??</h5>
                             <input
