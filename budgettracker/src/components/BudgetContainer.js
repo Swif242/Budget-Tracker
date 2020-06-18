@@ -7,13 +7,7 @@ import Total from "./Total"
 
 
 function BudgetContainer() {
-    const [expenses, setExpenses] = useState([
-        // {
-        // amount: 0,
-        // company: "",
-        // note: "",
-        // }
-    ])
+    const [expenses, setExpenses] = useState([])
     const [budgetState, setBudgetState] = useState({
         amount: [],
         company: "",
@@ -27,7 +21,7 @@ function BudgetContainer() {
     }
     // function to handle data when the submit button is clicked
     const handleSubmit = event => {
-        let newTotal = [];
+        // let newTotal = [];
         event.preventDefault();
         console.log("You added an expense of: " + budgetState.amount + " "
             + budgetState.company + " " + budgetState.note);
@@ -46,17 +40,23 @@ function BudgetContainer() {
 
         )
 
-        // push each amount input into a new array to test
-        newTotal.push(budgetState.amount)
-        console.log(newTotal) //prints out a new array but with only 1 value replaces prior value
+        // create a new array of expenses
+        const newExpenses = [...expenses,
+        {
+            amount: budgetState.amount,
+            company: budgetState.company,
+            note: budgetState.note,
 
-        // after creating new array add each value
-        newTotal = newTotal.reduce(function (a, b) {
-            return a + b;
-        });
+        }]
+        // set expenses to the newExpenses
+        setExpenses(newExpenses)
+        
+        // create a new variable with the total value of all amount inputs
+        const newTotal = newExpenses.reduce((total, expense) => (total + parseInt(expense.amount)), 0)
+
 
         // change the budgetState of total to newTotal
-        setBudgetState({ ...budgetState.total, newTotal })
+        setBudgetState({ ...budgetState, total: newTotal })
 
 
     }
