@@ -23,6 +23,7 @@ function BudgetContainer() {
     const handleSubmit = event => {
         // let newTotal = [];
         event.preventDefault();
+        event.target.reset();
         console.log("You added an expense of: " + budgetState.amount + " "
             + budgetState.company + " " + budgetState.note);
 
@@ -50,7 +51,7 @@ function BudgetContainer() {
         }]
         // set expenses to the newExpenses
         setExpenses(newExpenses)
-        
+
         // create a new variable with the total value of all amount inputs
         const newTotal = newExpenses.reduce((total, expense) => (total + parseInt(expense.amount)), 0)
 
